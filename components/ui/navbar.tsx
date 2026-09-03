@@ -3,10 +3,6 @@
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { Menu, X } from "lucide-react";
-// Checking previous steps, I used direct imports in card.tsx. I'll stick to that pattern or create the utils file.
-// The previous card.tsx defined `cn` internally. I should probably refactor that to a shared utility, but to be speedy I will define it or just use clsx/twMerge directly here.
-
 import { clsx, type ClassValue } from "clsx";
 import { twMerge } from "tailwind-merge";
 
@@ -17,34 +13,15 @@ function cn(...inputs: ClassValue[]) {
 const navItems = [
     { name: "Experience", href: "#experience" },
     { name: "Skills", href: "#skills" },
-    { name: "Project", href: "#projects" },
+    { name: "Projects", href: "#projects" },
     { name: "C&T", href: "#certificates" },
     { name: "Achievements", href: "#achievements" },
-    { name: "Get in touch", href: "#contact" },
+    { name: "Contact", href: "#contact" },
 ];
 
 export function Navbar() {
-    const [activeSection, setActiveSection] = useState("");
+    const [activeSection, setActiveSection] = useState("home");
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-    const [isNavVisible, setIsNavVisible] = useState(true);
-
-    useEffect(() => {
-        let timeoutId: NodeJS.Timeout;
-
-        const handleScroll = () => {
-            setIsNavVisible(false);
-            clearTimeout(timeoutId);
-            timeoutId = setTimeout(() => {
-                setIsNavVisible(true);
-            }, 200);
-        };
-
-        window.addEventListener("scroll", handleScroll);
-        return () => {
-            window.removeEventListener("scroll", handleScroll);
-            clearTimeout(timeoutId);
-        };
-    }, []);
 
     useEffect(() => {
         const observer = new IntersectionObserver(
@@ -57,11 +34,10 @@ export function Navbar() {
             },
             {
                 rootMargin: "-20% 0px -60% 0px",
-                threshold: 0
+                threshold: 0,
             }
         );
 
-        // Observe Home section explicitly
         const homeSection = document.querySelector("#home");
         if (homeSection) observer.observe(homeSection);
 
@@ -73,97 +49,100 @@ export function Navbar() {
         return () => observer.disconnect();
     }, []);
 
+    // Close menu on scroll
+    useEffect(() => {
+        const handleScroll = () => {
+            if (isMobileMenuOpen) setIsMobileMenuOpen(false);
+        };
+        window.addEventListener("scroll", handleScroll, { passive: true });
+        return () => window.removeEventListener("scroll", handleScroll);
+    }, [isMobileMenuOpen]);
+
     return (
         <>
-            <div className="fixed top-6 left-0 right-0 z-50 flex justify-end md:justify-center px-4">
-                {/* Desktop Menu */}
-                <motion.nav
-                    initial={{ y: -50, opacity: 0 }}
-                    animate={{ y: 0, opacity: 1 }}
-                    transition={{ duration: 0.5 }}
-                    className="hidden md:flex items-center gap-1 rounded-full border border-white/10 bg-black/60 px-2 py-2 shadow-2xl backdrop-blur-xl supports-[backdrop-filter]:bg-black/30"
-                >
-                    <Link
-                        href="#home"
-                        className={cn(
-                            "relative rounded-full px-4 py-2 text-sm font-medium transition-all hover:text-white",
-                            activeSection === "home"
-                                ? "bg-blue-600/20 text-blue-400 shadow-[0_0_20px_-5px_rgba(37,99,235,0.5)] ring-1 ring-blue-500/50"
-                                : "text-neutral-400 hover:bg-white/5"
-                        )}
+            {/* Top bar */}
+            <header className="fixed top-0 left-0 right-0 z-50 bg-white border-b border-[#D9D9D9]">
+                <div className="mx-auto max-w-7xl px-6 sm:px-10 lg:px-16 flex items-center justify-between h-14">
+                    {/* Wordmark — scrolls to top */}
+                    <button
+                        onClick={() => {
+                            setIsMobileMenuOpen(false);
+                            window.scrollTo({ top: 0, behavior: 'smooth' });
+                        }}
+                        className="flex flex-col leading-none group text-left"
+                        aria-label="Go to top"
                     >
-                        Home
-                        {activeSection === "home" && (
-                            <motion.div
-                                layoutId="active-nav"
-                                className="absolute inset-0 -z-10 rounded-full bg-blue-500/10"
-                                transition={{ type: "spring", stiffness: 380, damping: 30 }}
-                            />
-                        )}
-                    </Link>
-                    {navItems.map((item) => {
-                        const isActive = activeSection === item.href.substring(1);
-                        return (
-                            <Link
-                                key={item.name}
-                                href={item.href}
-                                className={cn(
-                                    "relative rounded-full px-4 py-2 text-sm font-medium transition-all hover:text-white",
-                                    isActive
-                                        ? "bg-blue-600/20 text-blue-400 shadow-[0_0_20px_-5px_rgba(37,99,235,0.5)] ring-1 ring-blue-500/50"
-                                        : "text-neutral-400 hover:bg-white/5"
-                                )}
-                            >
-                                {item.name}
-                                {isActive && (
-                                    <motion.div
-                                        layoutId="active-nav"
-                                        className="absolute inset-0 -z-10 rounded-full bg-blue-500/10"
-                                        transition={{ type: "spring", stiffness: 380, damping: 30 }}
-                                    />
-                                )}
-                            </Link>
-                        );
-                    })}
-                </motion.nav>
+                        <span className="text-[15px] font-bold tracking-tight text-[#111111] group-hover:opacity-70 transition-opacity">
+                            N.Pagalavan
+                        </span>
+                        <span className="text-[10px] text-[#888888] tracking-widest uppercase mt-0.5">
+                            Portfolio
+                        </span>
+                    </button>
 
-                {/* Mobile Menu Toggle */}
-                <motion.div
-                    initial={{ y: -50, opacity: 0 }}
-                    animate={{
-                        y: isNavVisible ? 0 : -100,
-                        opacity: isNavVisible ? 1 : 0
-                    }}
-                    transition={{ duration: 0.3 }}
-                    className="md:hidden"
-                >
+                    {/* Desktop nav */}
+                    <nav className="hidden md:flex items-center gap-7" aria-label="Main navigation">
+                        {navItems.map((item) => {
+                            const isActive = activeSection === item.href.substring(1);
+                            return (
+                                <Link
+                                    key={item.name}
+                                    href={item.href}
+                                    className={cn(
+                                        "text-[13px] font-medium transition-colors pb-0.5",
+                                        isActive
+                                            ? "text-[#111111] border-b border-[#111111]"
+                                            : "text-[#888888] hover:text-[#111111] border-b border-transparent"
+                                    )}
+                                >
+                                    {item.name}
+                                </Link>
+                            );
+                        })}
+                    </nav>
+
+                    {/* Mobile hamburger */}
                     <button
                         onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                        className="rounded-full border border-white/10 bg-black/60 p-3 text-white shadow-2xl backdrop-blur-xl transition-all hover:bg-white/10"
+                        className="md:hidden flex flex-col gap-[5px] p-2 group"
+                        aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
                     >
-                        {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+                        <motion.span
+                            animate={isMobileMenuOpen ? { rotate: 45, y: 7 } : { rotate: 0, y: 0 }}
+                            transition={{ duration: 0.2 }}
+                            className="block h-px w-6 bg-[#111111] origin-center"
+                        />
+                        <motion.span
+                            animate={isMobileMenuOpen ? { opacity: 0 } : { opacity: 1 }}
+                            transition={{ duration: 0.15 }}
+                            className="block h-px w-6 bg-[#111111]"
+                        />
+                        <motion.span
+                            animate={isMobileMenuOpen ? { rotate: -45, y: -7 } : { rotate: 0, y: 0 }}
+                            transition={{ duration: 0.2 }}
+                            className="block h-px w-6 bg-[#111111] origin-center"
+                        />
                     </button>
-                </motion.div>
-            </div>
+                </div>
+            </header>
 
-            {/* Mobile Menu Overlay */}
+            {/* Mobile menu */}
             <AnimatePresence>
                 {isMobileMenuOpen && (
                     <motion.div
-                        initial={{ opacity: 0, y: -20 }}
+                        initial={{ opacity: 0, y: -8 }}
                         animate={{ opacity: 1, y: 0 }}
-                        exit={{ opacity: 0, y: -20 }}
-                        className="fixed inset-x-4 top-24 z-40 rounded-3xl border border-white/10 bg-black/90 p-4 shadow-2xl backdrop-blur-xl md:hidden"
+                        exit={{ opacity: 0, y: -8 }}
+                        transition={{ duration: 0.2 }}
+                        className="fixed top-14 left-0 right-0 z-40 bg-white border-b border-[#D9D9D9] md:hidden"
                     >
-                        <div className="flex flex-col gap-2">
+                        <nav className="flex flex-col px-6 py-4 gap-1" aria-label="Mobile navigation">
                             <Link
                                 href="#home"
                                 onClick={() => setIsMobileMenuOpen(false)}
                                 className={cn(
-                                    "rounded-xl px-4 py-3 text-base font-medium transition-all",
-                                    activeSection === "home"
-                                        ? "bg-blue-600/20 text-blue-400"
-                                        : "text-neutral-400 hover:bg-white/5 hover:text-white"
+                                    "py-3 text-sm font-medium border-b border-[#F2F2F2] transition-colors",
+                                    activeSection === "home" ? "text-[#111111]" : "text-[#888888]"
                                 )}
                             >
                                 Home
@@ -176,17 +155,15 @@ export function Navbar() {
                                         href={item.href}
                                         onClick={() => setIsMobileMenuOpen(false)}
                                         className={cn(
-                                            "rounded-xl px-4 py-3 text-base font-medium transition-all",
-                                            isActive
-                                                ? "bg-blue-600/20 text-blue-400"
-                                                : "text-neutral-400 hover:bg-white/5 hover:text-white"
+                                            "py-3 text-sm font-medium border-b border-[#F2F2F2] transition-colors last:border-0",
+                                            isActive ? "text-[#111111]" : "text-[#888888]"
                                         )}
                                     >
                                         {item.name}
                                     </Link>
                                 );
                             })}
-                        </div>
+                        </nav>
                     </motion.div>
                 )}
             </AnimatePresence>

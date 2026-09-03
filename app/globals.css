@@ -1,26 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@700;800;900&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  --background: #0a0a0a;
-  --foreground: #ededed;
+  --background: #FFFFFF;
+  --background-soft: #F7F7F7;
+  --surface: #F2F2F2;
+  --border: #D9D9D9;
+  --border-dark: #B5B5B5;
+  --text-primary: #111111;
+  --text-secondary: #555555;
+  --text-muted: #888888;
+  --black: #000000;
+  --white: #FFFFFF;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: #FFFFFF;
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  color: var(--text-primary);
+  background-color: #FFFFFF;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-feature-settings: 'kern' 1, 'liga' 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background-color: #111111;
+  color: #FFFFFF;
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
-}
 
-::selection {
-  background-color: #2563eb;
-  /* Blue-600 */
-  color: white;
+  .font-display {
+    font-family: 'Playfair Display', Georgia, serif;
+  }
+
+  /* Thin editorial divider */
+  .divider {
+    border-top: 1px solid var(--border);
+  }
+
+  /* Vertical rotated text for sidebar */
+  .writing-vertical {
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    transform: rotate(180deg);
+  }
+
+  /* Editorial label — small-caps above a heading */
+  .label-sm {
+    font-size: 0.65rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    font-weight: 500;
+  }
+
+  /* Arrow link */
+  .arrow-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--text-primary);
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.2s ease, gap 0.2s ease;
+    padding-bottom: 1px;
+  }
+  .arrow-link:hover {
+    border-color: var(--text-primary);
+    gap: 0.75rem;
+  }
 }

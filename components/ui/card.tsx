@@ -15,7 +15,7 @@ export function Card({
     return (
         <div
             className={cn(
-                "rounded-xl border border-neutral-800 bg-neutral-900/50 p-6 shadow-sm backdrop-blur-sm transition-all hover:bg-neutral-900",
+                "border-t border-[#D9D9D9] py-6 transition-colors",
                 className
             )}
         >

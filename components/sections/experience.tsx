@@ -1,60 +1,70 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Card } from "@/components/ui/card";
 import { SectionHeading } from "@/components/ui/section-heading";
 
 const experiences = [
     {
         company: "XTROP",
         role: "Research Intern",
-        period: "June 2025 - Present",
+        period: "June 2025 – Present",
         description: [
-            "Currently writing a second research paper focused on Air Quality Index (AQI) prediction.",
             "Co-authored an IEEE-accepted paper on 'An Interpretable Machine Learning Model for Oral Cancer Survival Rate Prediction'.",
-            "Built n8n automation for interns' onboarding process, accelerated onboarding by reducing manual steps and reduced manual follow-ups."
-        ]
+            "Co-authored an IEEE-accepted paper on 'AQIStack An Interpretable Ensemble Learning Framework for Reliable Air Quality Index Prediction'.",
+            "Built n8n automation for interns' onboarding process, accelerated onboarding by reducing manual steps and reduced manual follow-ups.",
+        ],
     },
     {
         company: "Medyaan",
         role: "Machine Learning & Power BI Intern",
-        period: "Feb 2025 - Jun 2025",
+        period: "Feb 2025 – Jun 2025",
         description: [
             "Built Power BI dashboards to visualise key performance metrics and translated them into insights.",
-            "Implemented ML models/data pipelines [Regression, classification]."
-        ]
-    }
+            "Implemented ML models/data pipelines — Regression, Classification.",
+        ],
+    },
 ];
 
 export function Experience() {
     return (
-        <section id="experience" className="py-24 px-4 sm:px-6 lg:px-8">
+        <section id="experience" className="px-6 sm:px-10 lg:px-16">
             <div className="mx-auto w-full max-w-7xl">
-                <SectionHeading title="Experience" subtitle="Where I've worked and what I've done." />
+                <SectionHeading title="Experience" subtitle="Where I've worked" />
 
-                <div className="space-y-8">
+                <div className="divide-y divide-[#D9D9D9] border-b border-[#D9D9D9]">
                     {experiences.map((exp, index) => (
                         <motion.div
                             key={index}
-                            initial={{ opacity: 0, y: 20 }}
+                            initial={{ opacity: 0, y: 16 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
-                            transition={{ delay: index * 0.1 }}
+                            transition={{ delay: index * 0.12, duration: 0.5 }}
+                            className="py-10 grid sm:grid-cols-[1fr_auto] gap-x-8 gap-y-2"
                         >
-                            <Card>
-                                <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between">
-                                    <div>
-                                        <h3 className="text-xl font-bold text-white">{exp.role}</h3>
-                                        <p className="text-blue-400">{exp.company}</p>
-                                    </div>
-                                    <span className="mt-2 text-sm text-neutral-500 sm:mt-0">{exp.period}</span>
+                            {/* Left: role + company */}
+                            <div>
+                                <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
+                                    <h3 className="text-xl font-bold text-[#111111] leading-snug">
+                                        {exp.role}
+                                    </h3>
+                                    <span className="text-sm text-[#888888] font-medium">
+                                        @ {exp.company}
+                                    </span>
                                 </div>
-                                <ul className="mt-4 list-inside list-disc space-y-2 text-neutral-400">
+                                <ul className="mt-4 space-y-2">
                                     {exp.description.map((item, i) => (
-                                        <li key={i}>{item}</li>
+                                        <li key={i} className="flex gap-3 text-[15px] text-[#555555] leading-relaxed">
+                                            <span className="mt-[6px] flex-shrink-0 block w-1 h-1 rounded-full bg-[#B5B5B5]" />
+                                            {item}
+                                        </li>
                                     ))}
                                 </ul>
-                            </Card>
+                            </div>
+
+                            {/* Right: period */}
+                            <div className="sm:text-right">
+                                <span className="label-sm whitespace-nowrap">{exp.period}</span>
+                            </div>
                         </motion.div>
                     ))}
                 </div>

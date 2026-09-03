@@ -8,7 +8,7 @@ import { Contact } from "@/components/sections/contact";
 
 export default function Home() {
     return (
-        <main className="bg-neutral-950 min-h-screen text-neutral-200 selection:bg-blue-500/30">
+        <main className="min-h-screen bg-white text-text-primary selection:bg-black selection:text-white">
             <Hero />
             <Experience />
             <Skills />
@@ -16,8 +16,15 @@ export default function Home() {
             <Certificates />
             <Achievements />
             <Contact />
-            <footer className="py-8 text-center text-sm text-neutral-600 border-t border-neutral-900">
-                &copy; {new Date().getFullYear()} N. Pagalavan. All rights reserved.
+            <footer className="py-10 px-6 sm:px-10 lg:px-16 border-t border-[#D9D9D9]">
+                <div className="mx-auto max-w-7xl flex flex-col sm:flex-row items-center justify-between gap-2">
+                    <span className="text-xs text-[#888888] tracking-wide">
+                        &copy; {new Date().getFullYear()} N.Pagalavan
+                    </span>
+                    <span className="text-xs text-[#888888] tracking-wide">
+                        All rights reserved.
+                    </span>
+                </div>
             </footer>
         </main>
     );
