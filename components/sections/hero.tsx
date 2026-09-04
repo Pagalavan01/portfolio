@@ -68,25 +68,7 @@ export function Hero() {
                             </Link>
                         </motion.div>
 
-                        {/* Mobile social links — visible only on small screens */}
-                        <motion.div
-                            initial={{ opacity: 0 }}
-                            animate={{ opacity: 1 }}
-                            transition={{ delay: 0.7, duration: 0.5 }}
-                            className="mt-8 flex items-center gap-6 lg:hidden"
-                        >
-                            {socialLinks.map((link) => (
-                                <a
-                                    key={link.name}
-                                    href={link.href}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="text-[11px] tracking-[0.18em] uppercase text-[#888888] hover:text-[#111111] transition-colors font-medium"
-                                >
-                                    {link.name}
-                                </a>
-                            ))}
-                        </motion.div>
+
                     </motion.div>
 
                     {/* Right: Profile photo */}
@@ -116,7 +98,7 @@ export function Hero() {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 1.2, duration: 0.5 }}
-                className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
+                className="absolute bottom-8 left-1/2 -translate-x-1/2 hidden lg:flex flex-col items-center gap-2"
             >
                 <span className="label-sm">Scroll</span>
                 <motion.span
