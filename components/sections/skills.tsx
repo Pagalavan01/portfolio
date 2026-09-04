@@ -13,7 +13,7 @@ const skillCategories = [
         skills: [
             "Pandas", "NumPy", "Scikit-learn", "Matplotlib", "Seaborn",
             "Regression", "Classification", "Data Preprocessing",
-            "Model Evaluation", "Explainable AI (SHAP, LIME)", "PCA", "Power BI",
+            "Model Evaluation", "Explainable AI (SHAP & LIME)", "PCA", "Power BI",
         ],
     },
     {
@@ -48,7 +48,7 @@ export function Skills() {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: index * 0.07, duration: 0.45 }}
-                            className="py-7 grid sm:grid-cols-[180px_1fr] gap-x-10 gap-y-3 items-start"
+                            className="py-6 sm:py-7 grid sm:grid-cols-[180px_1fr] gap-x-10 gap-y-3 items-start"
                         >
                             {/* Category label */}
                             <span className="label-sm pt-1">{category.title}</span>

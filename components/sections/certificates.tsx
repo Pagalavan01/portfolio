@@ -28,7 +28,7 @@ export function Certificates() {
                             whileInView={{ opacity: 1, x: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: index * 0.07, duration: 0.4 }}
-                            className="py-5 grid sm:grid-cols-[40px_1fr] gap-x-8 items-center"
+                            className="py-4 sm:py-5 grid sm:grid-cols-[40px_1fr] gap-x-8 gap-y-1 items-center"
                         >
                             <span className="label-sm text-[#B5B5B5]">
                                 {String(index + 1).padStart(2, "0")}

@@ -1,9 +1,9 @@
-[00:00:02.584] Server  WARN    ⚠ Turbopack's filesystem cache has been deleted because we previously detected an internal error in Turbopack. Builds or page loads may be slower as a result.
-[00:00:02.811] Server  LOG     ✓ Ready in 2.4s
-[00:01:36.445] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:10:17.482] Server  LOG     ✓ Compiled in 76ms
-[00:12:12.640] Server  LOG     ✓ Compiled in 49ms
-[00:12:14.884] Server  LOG     ✓ Compiled in 30ms
-[00:12:17.889] Server  LOG     ✓ Compiled in 22ms
-[00:15:24.474] Server  LOG     ✓ Compiled in 23ms
-[00:15:26.280] Server  LOG     ✓ Compiled in 24ms
+[00:00:01.550] Server  LOG     ✓ Ready in 1270ms
+[00:01:01.906] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:01:07.226] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:05:09.749] Server  LOG     ✓ Compiled in 45ms
+[00:11:03.746] Server  LOG     ✓ Compiled in 36ms
+[00:11:55.043] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:13:02.702] Server  LOG     ✓ Compiled in 33ms
+[00:22:00.142] Server  LOG     ✓ Compiled in 25ms
+[00:24:09.838] Server  LOG     ✓ Compiled in 30ms

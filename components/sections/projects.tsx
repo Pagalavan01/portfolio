@@ -10,6 +10,7 @@ const projectsData = [
         description:
             "Built a comprehensive workflow that automatically sends personalised welcome emails to new members joining the college book community. Includes additional workflow automations to streamline communication and engagement.",
         tags: ["Workflow Automation", "Email Marketing"],
+        url: null,
     },
     {
         title: "Personal Chatbot",
@@ -17,6 +18,7 @@ const projectsData = [
         description:
             "My personal RAG chatbot using Python, embeddings, and vector-based document retrieval for contextual responses.",
         tags: ["Python", "RAG", "Embeddings", "Vector Search"],
+        url: null,
     },
     {
         title: "DataMedic",
@@ -24,6 +26,7 @@ const projectsData = [
         description:
             "A data quality tool to automatically analyzes & fix CSV datasets for missing values, duplicate rows, data-type mismatches, inconsistent categories, and suspicious outliers.",
         tags: ["Data Analysis", "Python", "CSV"],
+        url: "https://datamedic.vercel.app/",
     },
     {
         title: "Chennai Restaurants Explorer",
@@ -31,6 +34,7 @@ const projectsData = [
         description:
             "A web application to help users discover top-rated and nearby restaurants in Chennai. Features search and filtering based on location, ratings, and cuisine preferences.",
         tags: ["Web App", "Search & Filtering", "UX"],
+        url: "https://chennairestaurantexplorer.netlify.app/",
     },
 ];
 
@@ -58,9 +62,20 @@ export function Projects() {
                             {/* Content */}
                             <div>
                                 <div className="flex flex-wrap items-baseline gap-x-4 gap-y-1">
-                                    <h3 className="text-xl font-bold text-[#111111] leading-snug">
-                                        {project.title}
-                                    </h3>
+                                    {project.url ? (
+                                        <a
+                                            href={project.url}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="inline-flex items-center gap-2 text-xl font-bold text-[#111111] leading-snug hover:opacity-70 transition-opacity"
+                                        >
+                                            {project.title} <span aria-hidden className="text-base font-normal text-[#888888]">↗</span>
+                                        </a>
+                                    ) : (
+                                        <h3 className="text-xl font-bold text-[#111111] leading-snug">
+                                            {project.title}
+                                        </h3>
+                                    )}
                                     <span className="text-sm text-[#888888]">{project.subtitle}</span>
                                 </div>
                                 <p className="mt-3 text-[15px] leading-relaxed text-[#555555] max-w-2xl">

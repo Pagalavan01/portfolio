@@ -33,7 +33,7 @@ export function Hero() {
 
             {/* Main content */}
             <div className="mx-auto w-full max-w-7xl px-6 sm:px-10 lg:px-16">
-                <div className="grid lg:grid-cols-2 gap-16 lg:gap-8 items-center min-h-[calc(100vh-3.5rem)] py-20 lg:py-0">
+                <div className="grid lg:grid-cols-2 gap-10 lg:gap-8 items-center min-h-[calc(100vh-3.5rem)] py-12 sm:py-16 lg:py-0">
 
                     {/* Left: Text */}
                     <motion.div
@@ -72,7 +72,7 @@ export function Hero() {
                             initial={{ opacity: 0, y: 12 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ delay: 0.5, duration: 0.5 }}
-                            className="mt-10 flex flex-wrap items-center gap-8"
+                            className="mt-8 sm:mt-10 flex flex-wrap items-center gap-6 sm:gap-8"
                         >
                             <Link href="#contact" className="arrow-link text-sm font-semibold">
                                 Contact <span aria-hidden>→</span>
@@ -81,6 +81,26 @@ export function Hero() {
                                 My Projects <span aria-hidden>→</span>
                             </Link>
                         </motion.div>
+
+                        {/* Mobile social links — visible only on small screens */}
+                        <motion.div
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            transition={{ delay: 0.7, duration: 0.5 }}
+                            className="mt-8 flex items-center gap-6 lg:hidden"
+                        >
+                            {socialLinks.map((link) => (
+                                <a
+                                    key={link.name}
+                                    href={link.href}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="text-[11px] tracking-[0.18em] uppercase text-[#888888] hover:text-[#111111] transition-colors font-medium"
+                                >
+                                    {link.name}
+                                </a>
+                            ))}
+                        </motion.div>
                     </motion.div>
 
                     {/* Right: Profile photo */}
@@ -88,16 +108,16 @@ export function Hero() {
                         initial={{ opacity: 0, scale: 0.96 }}
                         animate={{ opacity: 1, scale: 1 }}
                         transition={{ delay: 0.3, duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
-                        className="hidden lg:flex justify-center items-center"
+                        className="flex justify-center items-center order-first lg:order-last"
                     >
-                        <div className="relative w-[420px] h-[520px] overflow-hidden">
+                        <div className="relative w-[260px] h-[320px] sm:w-[320px] sm:h-[400px] lg:w-[420px] lg:h-[520px] overflow-hidden">
                             <Image
                                 src="/Pagalavan.png"
                                 alt="N.Pagalavan"
                                 fill
                                 className="object-cover object-top grayscale"
                                 priority
-                                sizes="420px"
+                                sizes="(max-width: 640px) 260px, (max-width: 1024px) 320px, 420px"
                             />
                         </div>
                     </motion.div>

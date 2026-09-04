@@ -45,7 +45,7 @@ export function Contact() {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: index * 0.08, duration: 0.4 }}
-                            className="p-6 sm:p-8 group"
+                            className="p-5 sm:p-6 lg:p-8 group min-h-[100px] sm:min-h-0"
                         >
                             <item.icon className="h-4 w-4 text-[#B5B5B5] mb-4 group-hover:text-[#111111] transition-colors" />
                             <span className="label-sm block mb-2">{item.label}</span>
@@ -53,7 +53,7 @@ export function Contact() {
                                 href={item.href}
                                 target={item.href.startsWith("http") ? "_blank" : undefined}
                                 rel={item.href.startsWith("http") ? "noopener noreferrer" : undefined}
-                                className="text-[14px] font-medium text-[#111111] hover:text-[#555555] transition-colors break-all"
+                                className="text-[14px] font-medium text-[#111111] hover:text-[#555555] transition-colors break-words"
                             >
                                 {item.value}
                             </a>

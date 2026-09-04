@@ -24,6 +24,8 @@
 html {
   scroll-behavior: smooth;
   background-color: #FFFFFF;
+  /* Smooth momentum scrolling on iOS */
+  -webkit-overflow-scrolling: touch;
 }
 
 body {
@@ -33,6 +35,25 @@ body {
   font-feature-settings: 'kern' 1, 'liga' 1;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  /* Prevent horizontal overflow on mobile */
+  overflow-x: hidden;
+}
+
+/* Remove 300ms tap delay on all interactive elements */
+a, button, [role="button"], input, label, select, textarea {
+  touch-action: manipulation;
+}
+
+/* Ensure minimum touch target size (44x44px) on mobile */
+@media (max-width: 768px) {
+  a, button {
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+  }
+  nav a, nav button {
+    min-height: 44px;
+  }
 }
 
 ::selection {

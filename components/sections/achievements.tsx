@@ -36,7 +36,7 @@ export function Achievements() {
                             whileInView={{ opacity: 1, x: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: index * 0.1, duration: 0.45 }}
-                            className="py-8 grid sm:grid-cols-[40px_1fr] gap-x-8 items-start"
+                            className="py-6 sm:py-8 grid sm:grid-cols-[40px_1fr] gap-x-8 gap-y-2 items-start"
                         >
                             <span className="label-sm text-[#B5B5B5] pt-1">
                                 {String(index + 1).padStart(2, "0")}
