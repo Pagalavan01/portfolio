@@ -22,7 +22,7 @@ const projectsData = [
         title: "DataMedic",
         subtitle: "Data Quality Tool",
         description:
-            "A data quality tool that automatically analyses CSV datasets for missing values, duplicate rows, data-type mismatches, inconsistent categories, and suspicious outliers.",
+            "A data quality tool to automatically analyzes & fix CSV datasets for missing values, duplicate rows, data-type mismatches, inconsistent categories, and suspicious outliers.",
         tags: ["Data Analysis", "Python", "CSV"],
     },
     {

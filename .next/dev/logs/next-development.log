@@ -1,37 +1,9 @@
-[00:00:02.255] Server  LOG     ✓ Ready in 1520ms
-[00:00:33.705] Server  LOG     ○ Compiling / ...
-[00:00:37.573] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:03:22.586] Server  LOG     ✓ Compiled in 298ms
-[00:29:56.791] Server  LOG     ✓ Compiled in 475.8s
-[00:07:18.534] Server  LOG     ✓ Compiled in 64ms
-[00:07:52.855] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:10:41.775] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:16:13.580] Server  LOG     ✓ Compiled in 117ms
-[00:17:05.573] Server  LOG     ✓ Compiled in 47ms
-[00:18:34.990] Server  LOG     ✓ Compiled in 91ms
-[00:18:47.566] Server  LOG     ✓ Compiled in 56ms
-[00:19:20.641] Server  LOG     ✓ Compiled in 77ms
-[00:32:18.129] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:32:51.316] Server  LOG     ✓ Compiled in 98ms
-[00:32:53.804] Server  LOG     ✓ Compiled in 75ms
-[00:32:57.864] Server  LOG     ✓ Compiled in 70ms
-[00:33:00.640] Server  LOG     ✓ Compiled in 50ms
-[00:33:01.951] Server  LOG     ✓ Compiled in 72ms
-[00:33:06.062] Server  LOG     ✓ Compiled in 54ms
-[00:33:08.832] Server  LOG     ✓ Compiled in 78ms
-[00:33:11.516] Server  LOG     ✓ Compiled in 46ms
-[00:33:16.309] Server  LOG     ✓ Compiled in 62ms
-[00:33:19.851] Server  LOG     ✓ Compiled in 78ms
-[00:33:25.967] Server  LOG     ✓ Compiled in 57ms
-[00:33:28.897] Server  LOG     ✓ Compiled in 79ms
-[00:33:37.069] Server  LOG     ✓ Compiled in 56ms
-[00:33:40.958] Server  LOG     ✓ Compiled in 50ms
-[00:33:49.002] Server  LOG     ✓ Compiled in 46ms
-[00:34:03.388] Server  LOG     ✓ Compiled in 57ms
-[00:34:08.217] Server  LOG     ✓ Compiled in 51ms
-[00:34:12.524] Server  LOG     ✓ Compiled in 51ms
-[00:34:15.217] Server  LOG     ✓ Compiled in 90ms
-[00:34:19.569] Server  LOG     ✓ Compiled in 80ms
-[00:34:27.601] Server  LOG     ✓ Compiled in 63ms
-[00:34:32.222] Server  LOG     ✓ Compiled in 36ms
-[00:34:36.440] Server  LOG     ✓ Compiled in 63ms
+[00:00:02.584] Server  WARN    ⚠ Turbopack's filesystem cache has been deleted because we previously detected an internal error in Turbopack. Builds or page loads may be slower as a result.
+[00:00:02.811] Server  LOG     ✓ Ready in 2.4s
+[00:01:36.445] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:10:17.482] Server  LOG     ✓ Compiled in 76ms
+[00:12:12.640] Server  LOG     ✓ Compiled in 49ms
+[00:12:14.884] Server  LOG     ✓ Compiled in 30ms
+[00:12:17.889] Server  LOG     ✓ Compiled in 22ms
+[00:15:24.474] Server  LOG     ✓ Compiled in 23ms
+[00:15:26.280] Server  LOG     ✓ Compiled in 24ms

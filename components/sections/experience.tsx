@@ -6,8 +6,9 @@ import { SectionHeading } from "@/components/ui/section-heading";
 const experiences = [
     {
         company: "XTROP",
+        companyUrl: "https://www.linkedin.com/company/xtrop-research-solutions/",
         role: "Research Intern",
-        period: "June 2025 – Present",
+        period: "June 2025 – May 2026",
         description: [
             "Co-authored an IEEE-accepted paper on 'An Interpretable Machine Learning Model for Oral Cancer Survival Rate Prediction'.",
             "Co-authored an IEEE-accepted paper on 'AQIStack An Interpretable Ensemble Learning Framework for Reliable Air Quality Index Prediction'.",
@@ -16,6 +17,7 @@ const experiences = [
     },
     {
         company: "Medyaan",
+        companyUrl: "https://www.linkedin.com/company/medyaan/",
         role: "Machine Learning & Power BI Intern",
         period: "Feb 2025 – Jun 2025",
         description: [
@@ -48,7 +50,7 @@ export function Experience() {
                                         {exp.role}
                                     </h3>
                                     <span className="text-sm text-[#888888] font-medium">
-                                        @ {exp.company}
+                                        @ <a href={exp.companyUrl} target="_blank" rel="noopener noreferrer" className="hover:text-[#111111] transition-colors hover:underline">{exp.company}</a>
                                     </span>
                                 </div>
                                 <ul className="mt-4 space-y-2">
