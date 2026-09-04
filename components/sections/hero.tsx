@@ -15,21 +15,7 @@ export function Hero() {
             id="home"
             className="relative min-h-screen flex flex-col justify-center pt-14 overflow-hidden"
         >
-            {/* Vertical social links — left edge, desktop only */}
-            <div className="hidden lg:flex fixed left-0 top-1/2 -translate-y-1/2 z-30 flex-col items-center gap-6 pl-5">
-                {socialLinks.map((link) => (
-                    <a
-                        key={link.name}
-                        href={link.href}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="writing-vertical text-[10px] tracking-[0.2em] uppercase text-[#888888] hover:text-[#111111] transition-colors"
-                    >
-                        {link.name}
-                    </a>
-                ))}
-                <span className="block h-20 w-px bg-[#D9D9D9] mt-2" />
-            </div>
+
 
             {/* Main content */}
             <div className="mx-auto w-full max-w-7xl px-6 sm:px-10 lg:px-16">
@@ -64,8 +50,8 @@ export function Hero() {
                             Completed an internship at Medyaan focusing on Machine Learning and Power BI.
                             Contributed to IEEE research on oral cancer survival prediction and Air Quality
                             Index forecasting at XTROP. Developed workflow automations using n8n and
-                            projects including &ldquo;Personal Chatbot,&rdquo; &ldquo;Chennai Restaurant Explorer,&rdquo;
-                            and &ldquo;DataMedic.&rdquo; Aims to contribute to real-world solutions and deployable AI systems.
+                            projects including &ldquo;Personal Chatbot&rdquo;, &ldquo;Chennai Restaurant Explorer&rdquo;,
+                            and &ldquo;DataMedic&rdquo;. Aims to contribute to real-world solutions and deployable AI systems.
                         </motion.p>
 
                         <motion.div

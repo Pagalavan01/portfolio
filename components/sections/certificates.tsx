@@ -5,10 +5,10 @@ import { SectionHeading } from "@/components/ui/section-heading";
 
 const certificates = [
     { name: "Diploma in Computer Application (DCA)" },
-    { name: "Paper Presentation — IEEE Conference" },
-    { name: "2-day IoT Workshop — Senstorent" },
-    { name: "AI Fluency — Anthropic" },
-    { name: "Paper Presentation — National Conference" },
+    { name: "Paper Presentation - IEEE Conference" },
+    { name: "2-day IoT Workshop - Senstorent" },
+    { name: "AI Fluency - Anthropic" },
+    { name: "Paper Presentation - National Conference" },
 ];
 
 export function Certificates() {

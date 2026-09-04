@@ -22,7 +22,7 @@ const experiences = [
         period: "Feb 2025 – Jun 2025",
         description: [
             "Built Power BI dashboards to visualise key performance metrics and translated them into insights.",
-            "Implemented ML models/data pipelines — Regression, Classification.",
+            "Implemented ML models/data pipelines - Regression, Classification.",
         ],
     },
 ];
