@@ -13,8 +13,8 @@ const achievements = [
         description: "National Conference ‘AI-SDSC’25’ at SRMIST, Ramapuram",
     },
     {
-        title: "IEEE Publication",
-        description: "Research paper accepted by IEEE",
+        title: "IEEE Publications",
+        description: "Research papers accepted by IEEE",
     },
     {
         title: "Winner",

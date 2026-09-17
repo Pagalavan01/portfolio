@@ -10,8 +10,8 @@ const experiences = [
         role: "Research Intern",
         period: "June 2025 – May 2026",
         description: [
-            "Co-authored an IEEE-accepted paper on 'An Interpretable Machine Learning Model for Oral Cancer Survival Rate Prediction'.",
-            "Co-authored an IEEE-accepted paper on 'AQIStack An Interpretable Ensemble Learning Framework for Reliable Air Quality Index Prediction'.",
+            <span>Co-authored an IEEE-accepted paper on '<a href="https://ieeexplore.ieee.org/abstract/document/11377510" target="_blank" rel="noopener noreferrer" className="hover:text-[#111111] underline transition-colors">An Interpretable Machine Learning Model for Oral Cancer Survival Rate Prediction</a>'.</span>,
+            <span>Co-authored an IEEE-accepted paper on '<a href="https://ieeexplore.ieee.org/document/11681381" target="_blank" rel="noopener noreferrer" className="hover:text-[#111111] underline transition-colors">AQIStack: An Interpretable Ensemble Learning Framework for Reliable Air Quality Index Prediction</a>'.</span>,
             "Built n8n automation for interns' onboarding process, accelerated onboarding by reducing manual steps and reduced manual follow-ups.",
         ],
     },

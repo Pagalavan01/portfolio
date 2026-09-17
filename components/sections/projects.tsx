@@ -20,7 +20,7 @@ const projectsData = [
         title: "n8n Automation",
         subtitle: "College Book Community Workflow",
         description:
-            "Built a comprehensive workflow that automatically sends personalised welcome emails to new members joining the college book community. Includes additional workflow automations to streamline communication and engagement.",
+            "Built a comprehensive workflow that automatically sends personalised welcome emails to new members joining in the college book community.",
         tags: ["Workflow Automation", "Email Marketing"],
         url: null,
         github: "https://github.com/Pagalavan01/n8n-Automations",

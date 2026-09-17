@@ -17,8 +17,8 @@ const skillCategories = [
         ],
     },
     {
-        title: "AI",
-        skills: ["LLM Fundamentals", "RAG", "Embeddings", "Vector Search", "Prompt Engineering"],
+        title: "AI Concepts",
+        skills: ["LLM Fundamentals", "RAG", "Embeddings", "Vector Search", "LangChain", "MCP", "Prompt Engineering"],
     },
     {
         title: "Deployment",
@@ -26,7 +26,7 @@ const skillCategories = [
     },
     {
         title: "Tools",
-        skills: ["Git", "GitHub", "Jupyter Notebook", "Google Colab", "Docker", "VS Code", "Antigravity", "n8n", "Notion", "MS Excel", "MS Word"],
+        skills: ["Git", "GitHub", "Jupyter Notebook", "Google Colab", "LM Studio", "Docker", "VS Code", "Antigravity", "n8n", "Notion", "MS Excel", "MS Word"],
     },
     {
         title: "Creative Tools",

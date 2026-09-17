@@ -40,18 +40,22 @@ export function Hero() {
                             N.Pagalavan
                         </h1>
 
+                        <motion.h2
+                            initial={{ opacity: 0, y: 12 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ delay: 0.25, duration: 0.6 }}
+                            className="mt-4 font-display text-2xl sm:text-4xl font-semibold"
+                        >
+                            Tech Enthusiast
+                        </motion.h2>
+
                         <motion.p
                             initial={{ opacity: 0, y: 12 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ delay: 0.35, duration: 0.6 }}
                             className="mt-6 max-w-lg text-base sm:text-lg leading-relaxed text-[#555555]"
                         >
-                            Experience in model development, data preprocessing, and explainable AI.
-                            Completed an internship at Medyaan focusing on Machine Learning and Power BI.
-                            Contributed to IEEE research on oral cancer survival prediction and Air Quality
-                            Index forecasting at XTROP. Developed workflow automations using n8n and
-                            projects including &ldquo;Personal Chatbot&rdquo;, &ldquo;Chennai Restaurant Explorer&rdquo;,
-                            and &ldquo;DataMedic&rdquo;. Aims to contribute to real-world solutions and deployable AI systems.
+                            Experience in RAG, LLM, Web application development, ML model development, Data analysis, Data preprocessing, and Explainable AI.
                         </motion.p>
 
                         <motion.div
